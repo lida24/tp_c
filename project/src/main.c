@@ -3,6 +3,7 @@
 
 int main(int argc, char* argv[]) {
     int n;
+    printf("Enter quantity of applications\n");
     scanf("%d", &n);
     application* a = malloc(n * sizeof(application));
     char* buffer = malloc(MAX_STR_SIZE *sizeof(char));
@@ -33,7 +34,7 @@ int main(int argc, char* argv[]) {
         int update_month;
         int update_year;
         do {
-            printf("Enter %d data of applications, in format:  name;function;version;date_install;date_update\n", i+1);
+            printf("Enter %d data of applications, format: name;function;version;date_install;date_update\n", i+1);
             scanf("%99s", buffer);
         } while (parse_application(buffer, name, function, &version, &install_day, &install_month, &install_year, &update_day, &update_month, &update_year) == DATA_ERR);
         add_to_application(&a[i], name, function, version, install_day, install_month, install_year, update_day, update_month, update_year);
