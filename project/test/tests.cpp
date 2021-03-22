@@ -110,7 +110,7 @@ TEST (sort, bubble1){
     ASSERT_EQ(arr[1].install.day,4);
 }
 
-TEST(memory_application, malloc_of_application){
+TEST(memory_application, malloc_of_application ) {
   application* a = (application*)malloc(sizeof(application));
   EXPECT_EQ(malloc_application(a), 0);
   free(a->name);
@@ -118,7 +118,7 @@ TEST(memory_application, malloc_of_application){
   free(a);
 }
 
-TEST(mem_free, free_of_application){
+TEST(mem_free, free_of_application) {
         application* a = (application*)malloc(sizeof(application));
         a->name = (char*)malloc(NAME_SIZE * sizeof(char));
         a->function = (char*)malloc(FUNCTION_SIZE * sizeof(char));
@@ -126,6 +126,21 @@ TEST(mem_free, free_of_application){
         free(a);
 }
 
+TEST(application_add, null_of_application) {
+      application* a = (application*)malloc(sizeof(application));
+      a->name = NULL;
+      a->function = NULL;
+      char name[NAME_SIZE] = "excel";
+      char function[FUNCTION_SIZE] = "table";
+      EXPECT_EQ(add_to_application(a, name, function, 1, 2, 10, 2019, 3, 9, 2020), MEM_ERR);
+      free(a);
+}
+TEST(application_add, null_of_aplication) {
+        application* a = NULL;
+        char name[NAME_SIZE] = "word";
+        char function[FUNCTION_SIZE] = "text";
+        ASSERT_EQ(add_to_application(a, name, function, 3, 4, 2, 2001, 3, 9, 2009), MEM_ERR);
+}
 
 int main(int argc, char* argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
