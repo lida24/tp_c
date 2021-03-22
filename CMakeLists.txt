@@ -21,5 +21,6 @@ include_directories(${GTEST_INCLUDE_DIR})
 message(${GTEST_LIBRARIES})
 add_executable(tests project/test/tests.cpp)
 
+
 target_link_libraries(tests ${GTEST_LIBRARIES} -lpthread)
 target_link_libraries(tests study_std_lib)
