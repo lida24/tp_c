@@ -110,6 +110,22 @@ TEST (sort, bubble1){
     ASSERT_EQ(arr[1].install.day,4);
 }
 
+TEST(memory_application, malloc_of_application){
+  application* a = (application*)malloc(sizeof(application));
+  EXPECT_EQ(malloc_application(a), 0);
+  free(a->name);
+  free(a->function);
+  free(a);
+}
+
+TEST(mem_free, free_of_application){
+        application* a = (application*)malloc(sizeof(application));
+        a->name = (char*)malloc(NAME_SIZE * sizeof(char));
+        a->function = (char*)malloc(FUNCTION_SIZE * sizeof(char));
+        EXPECT_EQ(free_application(a), 0);
+        free(a);
+}
+
 
 int main(int argc, char* argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
