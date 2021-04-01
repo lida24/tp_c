@@ -30,5 +30,3 @@ script:
   - cppcheck --enable=warning,performance,portability,style --language=c++ ./static 
     #  - ./stress
   - cd "${TRAVIS_BUILD_DIR}"
-after_success:
-  - bash <(curl -s https://codecov.io/bash)

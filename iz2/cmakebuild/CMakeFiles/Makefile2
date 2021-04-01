@@ -53,6 +53,8 @@ CMAKE_BINARY_DIR = /home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_parallel.dir/all
+all: CMakeFiles/test_stat.dir/all
 all: CMakeFiles/parallel.dir/all
 all: CMakeFiles/static.dir/all
 all: CMakeFiles/dyn.dir/all
@@ -66,12 +68,68 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_parallel.dir/clean
+clean: CMakeFiles/test_stat.dir/clean
 clean: CMakeFiles/parallel.dir/clean
 clean: CMakeFiles/static.dir/clean
 clean: CMakeFiles/dyn.dir/clean
 clean: CMakeFiles/stat.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_parallel.dir
+
+# All Build rule for target.
+CMakeFiles/test_parallel.dir/all: CMakeFiles/dyn.dir/all
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/depend
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles --progress-num=9,10,11 "Built target test_parallel"
+.PHONY : CMakeFiles/test_parallel.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_parallel.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_parallel.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles 0
+.PHONY : CMakeFiles/test_parallel.dir/rule
+
+# Convenience name for target.
+test_parallel: CMakeFiles/test_parallel.dir/rule
+
+.PHONY : test_parallel
+
+# clean rule for target.
+CMakeFiles/test_parallel.dir/clean:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/clean
+.PHONY : CMakeFiles/test_parallel.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_stat.dir
+
+# All Build rule for target.
+CMakeFiles/test_stat.dir/all: CMakeFiles/stat.dir/all
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/depend
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles --progress-num=12,13,14 "Built target test_stat"
+.PHONY : CMakeFiles/test_stat.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_stat.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_stat.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles 0
+.PHONY : CMakeFiles/test_stat.dir/rule
+
+# Convenience name for target.
+test_stat: CMakeFiles/test_stat.dir/rule
+
+.PHONY : test_stat
+
+# clean rule for target.
+CMakeFiles/test_stat.dir/clean:
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/clean
+.PHONY : CMakeFiles/test_stat.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/parallel.dir

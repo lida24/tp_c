@@ -61,6 +61,7 @@ void count(int* counters, uint8_t* fileData, long fileLength, int num) {
         for ( int i = 0; i < usedThreads; ++i )
             pthread_join(threads[i], NULL);
     }
+    
       // освобождаем память с содержимым файла
     free(fileData);
 }

@@ -17,6 +17,8 @@ sys/sysinfo.h
 -
 pthread.h
 -
+malloc.h
+-
 
 /home/lida/TechnoPark/yz/tp_c/iz2/src/main.c
 stat.h

@@ -1,9 +1,5 @@
 #include "stat.h"
 
-// Количество счётчиков.
-#define NUM_COUNTERS 11 
-
-
 int main(int argc, char ** argv) {
     // программа должна вызываться с переданным параметром именем файла
     if ( argc < 2 ) {

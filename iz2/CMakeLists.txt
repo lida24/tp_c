@@ -27,19 +27,19 @@ add_executable(parallel
 target_link_libraries(static stat)
 target_link_libraries(parallel dyn)
 
-#enable_testing()
+enable_testing()
 
-#find_package(GTest REQUIRED)
-#include_directories(${GTEST_INCLUDE_DIR})
-#message(${GTEST_LIBRARIES})
-#add_executable(test_naive
-#   project/test/tests.cpp
-#   project/src/transposition_consistant.c)
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIR})
+message(${GTEST_LIBRARIES})
+add_executable(test_stat
+   tests/tests.cpp
+   src/stat.c)
 
-#add_executable(test_parallel
-#    project/test/tests.cpp
-#   project/src/transposition_parallel.c)    
-#target_link_libraries(test_naive ${GTEST_LIBRARIES} transpose_naive)
-#target_link_libraries(test_parallel ${GTEST_LIBRARIES} transpose_parallel)
+add_executable(test_parallel
+   tests/tests.cpp
+   src/dyn.c)    
+target_link_libraries(test_stat ${GTEST_LIBRARIES} stat)
+target_link_libraries(test_parallel ${GTEST_LIBRARIES} dyn)
 
 

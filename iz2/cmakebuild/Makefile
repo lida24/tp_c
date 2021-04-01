@@ -67,6 +67,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -109,6 +120,32 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named test_parallel
+
+# Build rule for target.
+test_parallel: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_parallel
+.PHONY : test_parallel
+
+# fast build rule for target.
+test_parallel/fast:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/build
+.PHONY : test_parallel/fast
+
+#=============================================================================
+# Target rules for targets named test_stat
+
+# Build rule for target.
+test_stat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_stat
+.PHONY : test_stat
+
+# fast build rule for target.
+test_stat/fast:
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/build
+.PHONY : test_stat/fast
 
 #=============================================================================
 # Target rules for targets named parallel
@@ -168,6 +205,7 @@ src/dyn.o: src/dyn.c.o
 
 # target to build an object file
 src/dyn.c.o:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/src/dyn.c.o
 	$(MAKE) -f CMakeFiles/dyn.dir/build.make CMakeFiles/dyn.dir/src/dyn.c.o
 .PHONY : src/dyn.c.o
 
@@ -177,6 +215,7 @@ src/dyn.i: src/dyn.c.i
 
 # target to preprocess a source file
 src/dyn.c.i:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/src/dyn.c.i
 	$(MAKE) -f CMakeFiles/dyn.dir/build.make CMakeFiles/dyn.dir/src/dyn.c.i
 .PHONY : src/dyn.c.i
 
@@ -186,6 +225,7 @@ src/dyn.s: src/dyn.c.s
 
 # target to generate assembly for a file
 src/dyn.c.s:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/src/dyn.c.s
 	$(MAKE) -f CMakeFiles/dyn.dir/build.make CMakeFiles/dyn.dir/src/dyn.c.s
 .PHONY : src/dyn.c.s
 
@@ -225,6 +265,7 @@ src/stat.o: src/stat.c.o
 
 # target to build an object file
 src/stat.c.o:
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/src/stat.c.o
 	$(MAKE) -f CMakeFiles/stat.dir/build.make CMakeFiles/stat.dir/src/stat.c.o
 .PHONY : src/stat.c.o
 
@@ -234,6 +275,7 @@ src/stat.i: src/stat.c.i
 
 # target to preprocess a source file
 src/stat.c.i:
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/src/stat.c.i
 	$(MAKE) -f CMakeFiles/stat.dir/build.make CMakeFiles/stat.dir/src/stat.c.i
 .PHONY : src/stat.c.i
 
@@ -243,8 +285,39 @@ src/stat.s: src/stat.c.s
 
 # target to generate assembly for a file
 src/stat.c.s:
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/src/stat.c.s
 	$(MAKE) -f CMakeFiles/stat.dir/build.make CMakeFiles/stat.dir/src/stat.c.s
 .PHONY : src/stat.c.s
+
+tests/tests.o: tests/tests.cpp.o
+
+.PHONY : tests/tests.o
+
+# target to build an object file
+tests/tests.cpp.o:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/tests/tests.cpp.o
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/tests/tests.cpp.o
+.PHONY : tests/tests.cpp.o
+
+tests/tests.i: tests/tests.cpp.i
+
+.PHONY : tests/tests.i
+
+# target to preprocess a source file
+tests/tests.cpp.i:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/tests/tests.cpp.i
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/tests/tests.cpp.i
+.PHONY : tests/tests.cpp.i
+
+tests/tests.s: tests/tests.cpp.s
+
+.PHONY : tests/tests.s
+
+# target to generate assembly for a file
+tests/tests.cpp.s:
+	$(MAKE) -f CMakeFiles/test_parallel.dir/build.make CMakeFiles/test_parallel.dir/tests/tests.cpp.s
+	$(MAKE) -f CMakeFiles/test_stat.dir/build.make CMakeFiles/test_stat.dir/tests/tests.cpp.s
+.PHONY : tests/tests.cpp.s
 
 # Help Target
 help:
@@ -253,6 +326,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... test"
+	@echo "... test_parallel"
+	@echo "... test_stat"
 	@echo "... parallel"
 	@echo "... static"
 	@echo "... dyn"
@@ -267,6 +343,9 @@ help:
 	@echo "... src/stat.o"
 	@echo "... src/stat.i"
 	@echo "... src/stat.s"
+	@echo "... tests/tests.o"
+	@echo "... tests/tests.i"
+	@echo "... tests/tests.s"
 .PHONY : help
 
 
