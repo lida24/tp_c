@@ -60,7 +60,9 @@ int main(int argc, char ** argv) {
     printf("Diff\tCount\n");
     for ( int i = 0; i < NUM_COUNTERS; ++i )
         printf("%d\t%d\n", i, counters[i]);
-    
+        
+        
+        
     // всё!
     return 0;
 }
