@@ -9,6 +9,3 @@ void count(int* counters, uint8_t* fileData, long fileLength, int num){
     free(fileData);
    
 }
-
-
-    

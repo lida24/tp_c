@@ -6,7 +6,7 @@ extern "C" {
 
 TEST(test_algo, test_count){
         int *counters = (int*)malloc(sizeof(int) * 11);
-        FILE * inputFile = fopen64("/home/lida/TechnoPark/yz/tp_c/iz2/tests/clip.mp4", "rb");
+        FILE *inputFile = fopen("clip.mp4", "rb");
         long fileLength = ftell(inputFile);
         uint8_t * fileData = static_cast<uint8_t *>(malloc(sizeof(uint8_t) * fileLength));
         fread(fileData, sizeof(uint8_t), (size_t)fileLength, inputFile);
