@@ -7,7 +7,7 @@ void count(int* counters, uint8_t* fileData, long fileLength, int num){
                
 // освобождаем память с содержимым файла
     free(fileData);
-
+   
 }
 
 
