@@ -1,0 +1,6 @@
+/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles/edit_cache.dir
+/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles/parallel.dir
+/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles/static.dir
+/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles/dyn.dir
+/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles/rebuild_cache.dir
+/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild/CMakeFiles/stat.dir

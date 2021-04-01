@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <sys/sysinfo.h>
-#include <pthread.h>
+#include "stat.h"
 
 // Количество счётчиков.
 #define NUM_COUNTERS 11 
@@ -54,16 +50,12 @@ int main(int argc, char ** argv) {
         printf("Can't properly close input file\n");
         exit(EXIT_FAILURE);
     }
-
-    for ( int i = 0; i < NUM_COUNTERS; ++i ) 
-        for ( long j = 0; j < fileLength - 1; ++j )
-            if ( abs(fileData[j] - fileData[j + 1]) == i )
-                counters[i] += 1;
     
+    int num = NUM_COUNTERS;
 
-    // освобождаем память с содержимым файла
-    free(fileData);
+    count(counters, fileData, fileLength, num);
 
+  
     // выводим значения счётчиков
     printf("Diff\tCount\n");
     for ( int i = 0; i < NUM_COUNTERS; ++i )
