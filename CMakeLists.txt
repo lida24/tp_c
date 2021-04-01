@@ -10,19 +10,19 @@ SET(MYCOMPILE_FLAGS "-std=c11")
 include_directories(include)
 
 add_library(stat STATIC
-    src/stat.c
-    include/stat.h)
+    iz2/src/stat.c
+    iz2/include/stat.h)
 
 add_library(dyn SHARED
-    src/dyn.c
-    include/stat.h)
+    iz2/src/dyn.c
+    iz2/include/stat.h)
 
 
 add_executable(static
-    src/main.c)
+    iz2/src/main.c)
 
 add_executable(parallel
-    src/main.c)
+    iz2/src/main.c)
 
 target_link_libraries(static stat)
 target_link_libraries(parallel dyn)
@@ -33,12 +33,12 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIR})
 message(${GTEST_LIBRARIES})
 add_executable(test_stat
-   tests/tests.cpp
-   src/stat.c)
+   iz2/tests/tests.cpp
+   iz2/src/stat.c)
 
 add_executable(test_parallel
-   tests/tests.cpp
-   src/dyn.c)    
+   iz2/tests/tests.cpp
+   iz2/src/dyn.c)    
 target_link_libraries(test_stat ${GTEST_LIBRARIES} stat)
 target_link_libraries(test_parallel ${GTEST_LIBRARIES} dyn)
 
