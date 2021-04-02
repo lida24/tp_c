@@ -33,11 +33,9 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIR})
 message(${GTEST_LIBRARIES})
 add_executable(test_stat
-   iz2/tests/tests.cpp
    iz2/src/stat.c)
 
 add_executable(test_parallel
-   iz2/tests/tests.cpp
    iz2/src/dyn.c)    
 target_link_libraries(test_stat ${GTEST_LIBRARIES} stat)
 target_link_libraries(test_parallel ${GTEST_LIBRARIES} dyn)
