@@ -25,8 +25,8 @@ before_script:
 
 script:
   - valgrind --track-origins=yes --leak-check=full ./static
-  - valgrind --track-origins=yes --leak-check=full ./dyn
-  - cppcheck --enable=warning,performance,portability,style --language=c++ ./dyn 
+  - valgrind --track-origins=yes --leak-check=full ./parallel
+  - cppcheck --enable=warning,performance,portability,style --language=c++ ./parallel 
   - cppcheck --enable=warning,performance,portability,style --language=c++ ./static 
     #  - ./stress
   - cd "${TRAVIS_BUILD_DIR}"
