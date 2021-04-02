@@ -7,7 +7,7 @@ set(CMAKE_C_FLAGS "-pthread  -Wall -Werror -Wpedantic")
 set(CMAKE_CXX_FLAGS "-pthread -Wall -Werror -Wpedantic -fprofile-arcs -ftest-coverage")
 SET(MYCOMPILE_FLAGS "-std=c11")
 
-include_directories(include)
+include_directories(iz2/include)
 
 add_library(stat STATIC
     iz2/src/stat.c
