@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -Wall -Werror -Wpedantic -fprofile-arcs -ftest-coverage   CMakeFiles/test_stat.dir/tests/tests.cpp.o CMakeFiles/test_stat.dir/src/stat.c.o  -o test_stat  /usr/lib/x86_64-linux-gnu/libgtest.a libstat.a 
