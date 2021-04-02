@@ -1,1 +1,0 @@
-/usr/bin/cc -pthread  -Wall -Werror -Wpedantic   CMakeFiles/static.dir/src/main.c.o  -o static  libstat.a 
