@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/stat.h
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+string.h
+-
+pthread.h
+-
+unistd.h
+-
+sys/sysinfo.h
+-
+
+/home/lida/TechnoPark/yz/tp_c/iz2/src/main.c
+stat.h
+/home/lida/TechnoPark/yz/tp_c/iz2/src/stat.h
+
