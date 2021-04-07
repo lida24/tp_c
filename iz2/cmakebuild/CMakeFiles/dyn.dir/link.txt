@@ -1,1 +1,0 @@
-/usr/bin/cc -fPIC -pthread  -Wall -Werror -Wpedantic  -shared -Wl,-soname,libdyn.so -o libdyn.so CMakeFiles/dyn.dir/iz2/src/dyn.c.o 
