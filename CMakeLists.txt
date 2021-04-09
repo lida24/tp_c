@@ -10,12 +10,14 @@ SET(MYCOMPILE_FLAGS "-std=c11")
 include_directories(iz2/include)
 
 add_library(stat STATIC
-    iz2/src/stat.c
-    iz2/include/stat.h)
+    iz2/src/consistently.c
+    iz2/src/common.c
+    iz2/include/interface.h)
 
 add_library(dyn SHARED
-    iz2/src/dyn.c
-    iz2/include/stat.h)
+    iz2/src/parallel.c
+    iz2/src/common.c
+    iz2/include/interface.h)
 
 
 add_executable(static
@@ -34,12 +36,12 @@ include_directories(${GTEST_INCLUDE_DIR})
 message(${GTEST_LIBRARIES})
 add_executable(test_stat
    iz2/tests/tests.cpp
-   iz2/src/stat.c)
+   iz2/src/consistently.c
+   iz2/src/common.c)
 
 add_executable(test_parallel
    iz2/tests/tests.cpp
-   iz2/src/dyn.c)    
+   iz2/src/parallel.c
+   iz2/src/common.c)    
 target_link_libraries(test_stat ${GTEST_LIBRARIES} stat)
 target_link_libraries(test_parallel ${GTEST_LIBRARIES} dyn)
-
-
