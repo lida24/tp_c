@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -Wall -Werror -Wpedantic -fprofile-arcs -ftest-coverage   CMakeFiles/test_parallel.dir/iz2/tests/tests.cpp.o CMakeFiles/test_parallel.dir/iz2/src/parallel.c.o CMakeFiles/test_parallel.dir/iz2/src/common.c.o  -o test_parallel  -Wl,-rpath,/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild /usr/lib/x86_64-linux-gnu/libgtest.a libdyn.so 

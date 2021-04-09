@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/interface.h
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+string.h
+-
+pthread.h
+-
+unistd.h
+-
+sys/sysinfo.h
+-
+malloc.h
+-
+
+/home/lida/TechnoPark/yz/tp_c/iz2/tests/tests.cpp
+gtest/gtest.h
+/home/lida/TechnoPark/yz/tp_c/iz2/tests/gtest/gtest.h
+interface.h
+/home/lida/TechnoPark/yz/tp_c/iz2/tests/interface.h
+

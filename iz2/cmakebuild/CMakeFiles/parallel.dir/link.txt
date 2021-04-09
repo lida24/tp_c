@@ -1,0 +1,1 @@
+/usr/bin/cc -pthread  -Wall -Werror -Wpedantic   CMakeFiles/parallel.dir/iz2/src/main.c.o  -o parallel  -Wl,-rpath,/home/lida/TechnoPark/yz/tp_c/iz2/cmakebuild libdyn.so 
